@@ -131,7 +131,7 @@ class SensorSeeder extends Seeder
             ],
             [
                 'id' => 13,
-                'vehiculo_id' => 7,
+                'vehiculo_id' => 5,
                 'tipo' => 'gasto',
                 'fecha_instalacion' => '2024-02-15',
                 'fecha_mantenimiento' => '2024-08-15',
@@ -141,7 +141,7 @@ class SensorSeeder extends Seeder
             ],
             [
                 'id' => 14,
-                'vehiculo_id' => 7,
+                'vehiculo_id' => 5,
                 'tipo' => 'seguridad',
                 'fecha_instalacion' => '2024-03-10',
                 'fecha_mantenimiento' => '2024-09-10',
@@ -151,7 +151,7 @@ class SensorSeeder extends Seeder
             ],
             [
                 'id' => 15,
-                'vehiculo_id' => 8,
+                'vehiculo_id' => 5,
                 'tipo' => 'frenadas_bruscas',
                 'fecha_instalacion' => '2024-04-05',
                 'fecha_mantenimiento' => '2024-10-05',

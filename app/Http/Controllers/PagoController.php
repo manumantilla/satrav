@@ -29,23 +29,30 @@ class PagoController extends Controller
 
     public function store(Request $request)
     {
-        //
+        // Validar los datos de entrada
         $request->validate([
             'user_id' => 'required|exists:users,id',
             'monto_total' => 'required|numeric',
             'descripcion' => 'nullable|string',
-            'comprobante' => 'nullable|file',
+            'comprobante' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:2048', // Validar tipos de archivo y tamaño
             'campo' => 'nullable|string',
         ]);
-
+    
+        // Crear una instancia de Pago
         $pago = new Pago($request->all());
-        if ($request->hasFile('comprobante')){
-            $pago->comprobante = $request->file('comprobante')->store('comprobante');
+    
+        // Verificar si hay un archivo para guardar
+        if ($request->hasFile('comprobante')) {
+            $pago->comprobante = $request->file('comprobante')->store('comprobantes', 'public');
         }
+    
+        // Guardar el pago
         $pago->save();
-        return redirect()->route('pagos.index')->with('success','Pago Creado Exitosamente');
+    
+        // Redirigir con un mensaje de éxito
+        return redirect()->route('pagos.index')->with('success', 'Pago Creado Exitosamente');
     }
-
+    
     public function show(Pago $pago)
     {
         return view('pagos.show', compact('pago'));

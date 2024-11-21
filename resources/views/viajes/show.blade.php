@@ -8,6 +8,9 @@
         <p><strong>Vehículo:</strong> {{ $viaje->vehiculo_id }}</p>
         <p><strong>Conductor:</strong> {{ $viaje->driver_id }}</p>
         <p><strong>Ruta:</strong> {{ $viaje->route_id }}</p>
+        <p><strong>Ruta:</strong> {{ $viaje->route_id }}</p>
+        <p><strong>Notas Viaje:</strong> Sin Ningun Incoveniente en carretera</p>
+
         <p><strong>Fecha de Salida:</strong> {{ $viaje->fecha_salida }}</p>
         <p><strong>Estado:</strong> {{ ucfirst($viaje->estado) }}</p>
     </div>

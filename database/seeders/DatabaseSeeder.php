@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(DriverSeeder::class);
         $this->call(ViajeSeeder::class);
         $this->call(SensorSeeder::class);
-        $this->call(DronSeeder::class);
+        $this->call(DronesSeeder::class);
+        $this->call(PlanesSeeder::class);
+        $this->call(RegistroComportamientoSeeder::class);
 
 
         User::factory()->create([

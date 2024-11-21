@@ -12,7 +12,7 @@ class SensorController extends Controller
     //
     public function index(Vehiculo $vehiculo){
         $sensores = Sensor::where('vehiculo_id', $vehiculo->id)->get();
-
+        $all = Sensor::all();
 
         $sensoresConAlerta = $sensores->map(function ($sensor) {
             $sensor->alerta = false;
@@ -52,6 +52,16 @@ class SensorController extends Controller
             return $sensor;
         });
 
-        return view('sensores.index', compact('sensoresConAlerta'));
+        return view('sensores.index', compact('sensoresConAlerta','all'));
+    }
+    public function estadisticas()
+    {
+        // Contar la cantidad de sensores por tipo
+        $datos = Sensor::selectRaw('tipo, COUNT(*) as cantidad')
+            ->groupBy('tipo')
+            ->get();
+
+        // Pasar los datos a la vista
+        return view('sensores.estadisticas', compact('datos'));
     }
 }

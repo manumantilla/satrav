@@ -16,6 +16,15 @@ class UserSeeder extends Seeder
         //
         DB::table('users')->insert([
             [
+                'name' => 'Philip',
+                'email' => 'philip@gmail.com',
+                'tipo' => 'admin',
+                'email_verified_at' => now(),
+                'password' => Hash::make('qwerty123'), // Cambia la contraseña según tus necesidades
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'name' => 'Admin User',
                 'email' => 'admin@example.com',
                 'tipo' => 'admin',
@@ -26,7 +35,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Employee User',
-                'email' => 'employee@example.com',
+                'email' => 'employee@gmail.com',
                 'tipo' => 'empleado',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password123'),
@@ -34,8 +43,8 @@ class UserSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Driver One',
-                'email' => 'driver1@example.com',
+                'name' => 'pepito',
+                'email' => 'driver1@gmail.com',
                 'tipo' => 'conductor',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password123'),
@@ -44,7 +53,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Driver Two',
-                'email' => 'driver2@example.com',
+                'email' => 'driver2@gmail.com',
                 'tipo' => 'conductor',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password123'),

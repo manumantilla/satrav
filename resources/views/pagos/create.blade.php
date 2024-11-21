@@ -8,7 +8,9 @@
         <div class="mb-4">
             <label for="user_id" class="block text-sm font-medium text-gray-700">Usuario</label>
             <select name="user_id" id="user_id" class="border border-gray-300 p-2 w-full">
-                <!-- Opciones de usuario -->
+                <option value="1" >Dueño 1</option>
+                <option value="2" >Dueño 2</option>
+                
             </select>
         </div>
         <div class="mb-4">

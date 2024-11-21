@@ -39,6 +39,33 @@
                 @endforeach
             </tbody>
         </table>
+
+
+        <table class="min-w-full bg-white border border-gray-200">
+            <thead>
+     
+            </thead>
+            <tbody>
+                @foreach($all as $sensor)
+                    <tr class="{{ $sensor->alerta ? 'bg-red-100' : 'bg-white' }}">
+                        <td class="px-6 py-4 border-b text-sm text-gray-700">{{ $sensor->vehiculo_id }}</td>
+                        <td class="px-6 py-4 border-b text-sm text-gray-700">{{ ucfirst($sensor->tipo) }}</td>
+                        <td class="px-6 py-4 border-b text-sm text-gray-700">{{ $sensor->valor }}</td>
+                        <td class="px-6 py-4 border-b text-sm text-gray-700">{{ $sensor->unidad }}</td>
+                        <td class="px-6 py-4 border-b text-sm text-gray-700">{{ ucfirst($sensor->estado) }}</td>
+                        <td class="px-6 py-4 border-b text-sm text-gray-700">{{ $sensor->fecha_instalacion }}</td>
+                        <td class="px-6 py-4 border-b text-sm text-gray-700">{{ $sensor->fecha_mantenimiento }}</td>
+                        <td class="px-6 py-4 border-b text-sm text-gray-700">
+                            @if($sensor->alerta)
+                                <span class="text-red-600 font-bold">¡Alerta!</span>
+                            @else
+                                <span class="text-green-600">Normal</span>
+                            @endif
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 @endsection
